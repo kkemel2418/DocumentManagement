@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DocumentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +14,12 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::prefix('documents')->group(function () {
+    Route::post('{type}', [DocumentController::class, 'createDocumentType']);
+    Route::put('{type}/{id}', [DocumentController::class, 'updateDocumentType']);
+    Route::get('download-pdf/{type}/{id}', [DocumentController::class, 'downloadPdf'])->name('download.pdf');
 });
