@@ -54,6 +54,9 @@ In postman there is a json model for each action of each of the two types of doc
 **  In folder : 'DocumentManagementService\resources\views'
 There are two PDF templates one of each contract type
 
+POSTMAN DOC
+https://documenter.getpostman.com/view/14051827/2s9Y5SVkTM
+
 
 
 
